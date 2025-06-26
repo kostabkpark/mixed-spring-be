@@ -46,7 +46,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker stop spring || true
-            docker rm spring || true
+            docker stop spring2 || true
+            docker rm spring2 || true
             docker rmi ${{ secrets.DOCKER_USER }}/spring-test:mixed || true
             docker run -d -p 8080:8080 --name spring ${{ secrets.DOCKER_USER }}/spring-test:mixed
